@@ -1,0 +1,9 @@
+GROUP:Creatures
+00_starter naija/naija2-head
+crotoid
+moneye
+nautilus
+
+GROUP:Plants
+healthplant
+Anemone

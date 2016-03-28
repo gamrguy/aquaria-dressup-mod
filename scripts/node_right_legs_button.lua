@@ -65,12 +65,12 @@ function activate(me)
 		if(costume.frontleg3) then
 			bone_setTexture(frontleg3, PATH..COSTUMES[LEGS].."-frontleg3")
 		else
-			bone_setTexture(frontleg3, PATH.."naija2-frontleg3")
+			bone_setTexture(frontleg3, PATH.."teen-frontleg3")
 		end
 		if(costume.backleg3) then
 			bone_setTexture(backleg3, PATH..COSTUMES[LEGS].."-backleg3")
 		else
-			bone_setTexture(backleg3, PATH.."naija2-backleg3")
+			bone_setTexture(backleg3, PATH.."teen-backleg3")
 		end
 	end
 end

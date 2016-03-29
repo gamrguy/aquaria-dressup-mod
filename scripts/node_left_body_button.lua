@@ -1,7 +1,4 @@
-local body
-
 function init(me)
-	body = entity_getBoneByIdx(getNaija(), BODY_BONE)
 end
 
 function update(me, dt)
@@ -15,5 +12,5 @@ function activate(me)
 	end
 	
 	--no need for special checks when every costume has a body
-	bone_setTexture(body, PATH..COSTUMES[BODY].."-body")
+	bone_setTexture(BODY_BONE, PATH..COSTUMES[BODY].."-body")
 end

@@ -1,7 +1,6 @@
-local set
+if v == nil then v = {} end
 
-function init(me, s)
-	set = s
+function init(me)
 end
 
 function update(me, dt)
@@ -11,8 +10,15 @@ function update(me, dt)
 end
 
 function activate(me)
+	local t={} ; local i=1
+	for str in string.gmatch(node_getName(me), "([^".." ".."]+)") do
+		t[i] = str
+		i = i + 1
+	end
+	local set = t[2]
+	
 	local c = 1
-	while(not (COSTUMES[c] == set)) do
+	while(COSTUMES[c] ~= set) do
 		c = c + 1
 	end
 	
@@ -21,8 +27,29 @@ function activate(me)
 	ARMS = c
 	LEGS = c
 	
-	setCostume(COSTUMES[c])
-	setCostume(COSTUMES[c].."_body")
-	setCostume(COSTUMES[c].."-arms")
-	setCostume(COSTUMES[c].."-legs")
+	bone_setTexture(BODY_BONE, PATH..set.."-body")
+	
+	local costume = COSTUMES[set]
+	
+	if(costume.arms) then
+		c = 1
+		while(COSTUMES[c] ~= costume.arms) do
+			c = c + 1
+		end
+		ARMS = c
+		SET_ARMS(COSTUMES[costume.arms])
+	else
+		SET_ARMS(COSTUMES[set])
+	end
+	
+	if(costume.legs) then
+		c = 1
+		while(COSTUMES[c] ~= costume.legs) do
+			c = c + 1
+		end
+		LEGS = c
+		SET_LEGS(COSTUMES[costume.legs])
+	else
+		SET_LEGS(COSTUMES[set])
+	end
 end

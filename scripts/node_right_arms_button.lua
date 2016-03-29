@@ -24,37 +24,5 @@ function activate(me)
 		end
 	until(not COSTUMES[COSTUMES[ARMS]].arms)
 	
-	local costume = COSTUMES[COSTUMES[ARMS]]
-	
-	if(costume.frontarm1) then
-		bone_setTexture(frontarm1, PATH..COSTUMES[ARMS].."-frontarm1")
-	else
-		bone_setTexture(frontarm1, PATH.."naija2-frontarm1")
-	end
-	if(costume.frontarm2) then
-		bone_setTexture(frontarm2, PATH..COSTUMES[ARMS].."-frontarm2")
-	else
-		bone_setTexture(frontarm2, PATH.."end-frontarm2")
-	end
-	if(costume.frontarm3) then
-		bone_setTexture(frontarm3, PATH..COSTUMES[ARMS].."-frontarm3")
-	else
-		bone_setTexture(frontarm3, PATH.."naija2-frontarm3")
-	end
-	
-	if(costume.backarm1) then
-		bone_setTexture(backarm1, PATH..COSTUMES[ARMS].."-backarm1")
-	else
-		bone_setTexture(backarm1, PATH.."naija2-backarm1")
-	end
-	if(costume.backarm2) then
-		bone_setTexture(backarm2, PATH..COSTUMES[ARMS].."-backarm2")
-	else
-		bone_setTexture(backarm2, PATH.."end-backarm2")
-	end
-	if(costume.backarm3) then
-		bone_setTexture(backarm3, PATH..COSTUMES[ARMS].."-backarm3")
-	else
-		bone_setTexture(backarm3, PATH.."naija2-backarm3")
-	end
+	SET_ARMS(COSTUMES[COSTUMES[ARMS]])
 end

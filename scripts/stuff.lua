@@ -1,4 +1,4 @@
--- here we have a lot of "global" stuff that apparently isn't "really" global. lol.
+-- so this is the file with all the important stuff shared everywhere
 -- here's the list of costumes in numerical indexing, for switching the heads about
 PATH = "naija/"
 COSTUMES = {"naija2", "etc", "cc", "urchin", "mithalan", "teen", "jelly", "mutant", "end", "zerosuit", "mia", "mithalas_girl1", "mithalas_girl2", "sunkenmom", "priestess", "li", "pirate", "luciengf"}
@@ -33,16 +33,107 @@ LEGS = 1
 
 -- list of bones for ease of reference
 HEAD_BONE = 1
-BODY_BONE = 0
-BACKARM1_BONE = 4
-BACKARM2_BONE = 5
-BACKARM3_BONE = 10
-FRONTARM1_BONE = 2
-FRONTARM2_BONE = 3
-FRONTARM3_BONE = 11
-BACKLEG1_BONE = 6
-BACKLEG2_BONE = 7
-BACKLEG3_BONE = 12
-FRONTLEG1_BONE = 8
-FRONTLEG2_BONE = 9
-FRONTLEG3_BONE = 13
+
+local n = getNaija()
+
+BODY_BONE = entity_getBoneByIdx(n, 0)
+
+FRONTARM1 = entity_getBoneByIdx(n, 2)
+FRONTARM2 = entity_getBoneByIdx(n, 3)
+FRONTARM3 = entity_getBoneByIdx(n, 11)
+
+BACKARM1 = entity_getBoneByIdx(n, 4)
+BACKARM2 = entity_getBoneByIdx(n, 5)
+BACKARM3 = entity_getBoneByIdx(n, 10)
+
+FRONTLEG1 = entity_getBoneByIdx(n, 8)
+FRONTLEG2 = entity_getBoneByIdx(n, 9)
+FRONTLEG3 = entity_getBoneByIdx(n, 13)
+
+BACKLEG1 = entity_getBoneByIdx(n, 6)
+BACKLEG2 = entity_getBoneByIdx(n, 7)
+BACKLEG3 = entity_getBoneByIdx(n, 12)
+
+function SET_LEGS(costume)
+	if(costume.leg1) then
+		bone_setTexture(FRONTLEG1, PATH..COSTUMES[LEGS].."-leg1")
+		bone_setTexture(BACKLEG1, PATH..COSTUMES[LEGS].."-leg1")
+	else
+		if(costume.frontleg1) then
+			bone_setTexture(FRONTLEG1, PATH..COSTUMES[LEGS].."-frontleg1")
+		else
+			bone_setTexture(FRONTLEG1, PATH.."naija2-frontleg1")
+		end
+		if(costume.backleg1) then
+			bone_setTexture(BACKLEG1, PATH..COSTUMES[LEGS].."-backleg1")
+		else
+			bone_setTexture(BACKLEG1, PATH.."naija2-backleg1")
+		end
+	end
+	
+	if(costume.leg2) then
+		bone_setTexture(FRONTLEG2, PATH..COSTUMES[LEGS].."-leg2")
+		bone_setTexture(BACKLEG2, PATH..COSTUMES[LEGS].."-leg2")
+	else
+		if(costume.frontleg2) then
+			bone_setTexture(FRONTLEG2, PATH..COSTUMES[LEGS].."-frontleg2")
+		else
+			bone_setTexture(FRONTLEG2, PATH.."end-frontleg2")
+		end
+		if(costume.backleg2) then
+			bone_setTexture(BACKLEG2, PATH..COSTUMES[LEGS].."-backleg2")
+		else
+			bone_setTexture(BACKLEG2, PATH.."end-backleg2")
+		end
+	end
+	
+	if(costume.leg3) then
+		bone_setTexture(FRONTLEG3, PATH..COSTUMES[LEGS].."-leg3")
+		bone_setTexture(BACKLEG3, PATH..COSTUMES[LEGS].."-leg3")
+	else
+		if(costume.frontleg3) then
+			bone_setTexture(FRONTLEG3, PATH..COSTUMES[LEGS].."-frontleg3")
+		else
+			bone_setTexture(FRONTLEG3, PATH.."teen-frontleg3")
+		end
+		if(costume.backleg3) then
+			bone_setTexture(BACKLEG3, PATH..COSTUMES[LEGS].."-backleg3")
+		else
+			bone_setTexture(BACKLEG3, PATH.."teen-backleg3")
+		end
+	end
+end
+
+function SET_ARMS(costume)
+	if(costume.frontarm1) then
+		bone_setTexture(FRONTARM1, PATH..COSTUMES[ARMS].."-frontarm1")
+	else
+		bone_setTexture(FRONTARM1, PATH.."naija2-frontarm1")
+	end
+	if(costume.frontarm2) then
+		bone_setTexture(FRONTARM2, PATH..COSTUMES[ARMS].."-frontarm2")
+	else
+		bone_setTexture(FRONTARM2, PATH.."end-frontarm2")
+	end
+	if(costume.frontarm3) then
+		bone_setTexture(FRONTARM3, PATH..COSTUMES[ARMS].."-frontarm3")
+	else
+		bone_setTexture(FRONTARM3, PATH.."naija2-frontarm3")
+	end
+	
+	if(costume.backarm1) then
+		bone_setTexture(BACKARM1, PATH..COSTUMES[ARMS].."-backarm1")
+	else
+		bone_setTexture(BACKARM1, PATH.."naija2-backarm1")
+	end
+	if(costume.backarm2) then
+		bone_setTexture(BACKARM2, PATH..COSTUMES[ARMS].."-backarm2")
+	else
+		bone_setTexture(BACKARM2, PATH.."end-backarm2")
+	end
+	if(costume.backarm3) then
+		bone_setTexture(BACKARM3, PATH..COSTUMES[ARMS].."-backarm3")
+	else
+		bone_setTexture(BACKARM3, PATH.."naija2-backarm3")
+	end
+end

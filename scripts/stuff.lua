@@ -23,7 +23,7 @@ COSTUMES["sunkenmom"] = {head=true, body=true, frontarm1=true, backarm1=true, fr
 COSTUMES["priestess"] = {head=true, body=true, frontarm1=true, frontarm2=true, backarm1=true, backarm2=true, frontleg1=true, frontleg2=true, backleg1=true, backleg2=true}
 COSTUMES["li"] = {head=true, body=true, frontarm1=true, frontarm2=true, frontarm3=true, backarm1=true, backarm2=true, backarm3=true, frontleg1=true, frontleg2=true, frontleg3=true, backleg1=true, backleg2=true, backleg3=true}
 COSTUMES["pirate"] = {head=true, body=true, frontarm1=true, frontarm2=true, backarm1=true, backarm2=true, frontleg1=true, frontleg2=true, frontleg3=true, backleg1=true, backleg2=true, backleg3=true}
-COSTUMES["capes"] = {"naija2", "etc", "jelly", "mia", "priestess"}
+COSTUMES["capes"] = {"naija2", "etc", "jelly", "mia", "priestess", "sunkenmom"}
 -- counters representing the current costume of each part
 HEAD = 1
 BODY = 1

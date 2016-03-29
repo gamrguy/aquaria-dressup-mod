@@ -1,5 +1,5 @@
 # This script creates XML files for each costume.
-# These files only consist of the head,allowing for 
+# These files only consist of the head, allowing for 
 # better control over the character's clothing.
 
 from io import FileIO

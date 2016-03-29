@@ -24,7 +24,8 @@ function update(me, dt)
 	--setCostume(COSTUMES[BODY].."_body")
 	--setCostume(COSTUMES[ARMS].."-arms")
 	--setCostume(COSTUMES[LEGS].."-legs")
-	if(getCostume() ~= COSTUMES[HEAD]) then
+	local isNaijaMatch = (COSTUMES[HEAD] == "naija2") and (getCostume() == "")
+	if(getCostume() ~= COSTUMES[HEAD] and not isNaijaMatch) then
 		if(COSTUMES[HEAD] == "naija2") then
 			setCostume("")
 		else
@@ -49,5 +50,16 @@ function msg(me, msg)
 				break
 			end
 		end
+	end
+	
+	if(msg == "start") then
+		avatar_fallOffWall()
+		entity_idle(n)
+		entity_swimToNode(n, getNode("naijastart"))
+		entity_watchForPath(n)
+		entity_setRiding(n, n)
+		entity_scale(n, 2, 2)
+		avatar_toggleCape(false)
+		STOPPED = false
 	end
 end

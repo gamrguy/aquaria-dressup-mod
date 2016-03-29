@@ -1,12 +1,14 @@
 function init(me)
+	node_setCursorActivation(me, true)
 end
 
 function update(me)
-	if(not STOPPED) then
-		node_setCursorActivation(me, true)
-	end
 end
 
 function activate(me)
-	node_msg(getNode("setup"), "stop")
+	if(not STOPPED) then
+		node_msg(getNode("setup"), "stop")
+	else
+		node_msg(getNode("setup"), "start")
+	end
 end

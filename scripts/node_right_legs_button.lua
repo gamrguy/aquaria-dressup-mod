@@ -13,7 +13,5 @@ function activate(me)
 		end
 	until(not COSTUMES[COSTUMES[LEGS]].legs)
 	
-	local costume = COSTUMES[COSTUMES[LEGS]]
-	
-	SET_LEGS(costume)
+	SET_LEGS(COSTUMES[LEGS])
 end

@@ -13,5 +13,5 @@ function activate(me)
 		end
 	until(not COSTUMES[COSTUMES[ARMS]].arms)
 	
-	SET_ARMS(COSTUMES[COSTUMES[ARMS]])
+	SET_ARMS(COSTUMES[ARMS])
 end

@@ -41,9 +41,9 @@ function activate(me)
 			c = c + 1
 		end
 		ARMS = c
-		SET_ARMS(COSTUMES[costume.arms])
+		SET_ARMS(costume.arms)
 	else
-		SET_ARMS(COSTUMES[set])
+		SET_ARMS(set)
 	end
 	
 	if(costume.legs) then
@@ -52,8 +52,8 @@ function activate(me)
 			c = c + 1
 		end
 		LEGS = c
-		SET_LEGS(COSTUMES[costume.legs])
+		SET_LEGS(costume.legs)
 	else
-		SET_LEGS(COSTUMES[set])
+		SET_LEGS(set)
 	end
 end

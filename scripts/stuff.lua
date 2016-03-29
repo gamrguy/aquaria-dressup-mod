@@ -1,7 +1,7 @@
 -- so this is the file with all the important stuff shared everywhere
 -- here's the list of costumes in numerical indexing, for switching the heads about
 PATH = "naija/"
-COSTUMES = {"naija2", "etc", "cc", "urchin", "mithalan", "teen", "jelly", "mutant", "seahorse", "end", "energyform", "beast", "sunform", "zerosuit", "mia", "mithalas_girl1", "mithalas_girl2", "sunkenmom", "priestess", "li", "pirate", "luciengf"}
+COSTUMES = {"naija2", "etc", "cc", "urchin", "mithalan", "teen", "jelly", "mutant", "seahorse", "end", "energyform", "beast", "veggie", "sunform", "zerosuit", "mia", "mithalas_girl1", "mithalas_girl2", "sunkenmom", "priestess", "li", "pirate", "luciengf"}
 
 -- now here's the costume details, indexed by name
 -- these show which costume has which unique body parts
@@ -18,6 +18,7 @@ COSTUMES["seahorse"] = {head=true, body=true, frontarm2=true, backarm2=true, fro
 COSTUMES["end"] = {body=true, frontarm2=true, backarm2=true, frontleg2=true, backleg2=true}
 COSTUMES["energyform"] = {body=true, frontarm2=true, backarm2=true, frontleg2=true, backleg2=true, frontleg3=true, backleg3=true}
 COSTUMES["beast"] = {body=true, frontarm1=true, frontarm2=true, backarm1=true, backarm2=true, leg2=true, leg3=true}
+COSTUMES["veggie"] = {body=true, frontarm1=true, frontarm2=true, frontarm3=true, backarm1=true, backarm2=true, backarm3=true, leg1=true, leg2=true, leg3=true}
 COSTUMES["sunform"] = {body=true, frontarm2=true, backarm2=true, leg2=true, leg3=true}
 COSTUMES["zerosuit"] = {body=true, frontarm1=true, frontarm2=true, frontarm3=true, backarm1=true, backarm2=true, backarm3=true, frontleg1=true, frontleg2=true, frontleg3=true, backleg1=true, backleg2=true, backleg3=true}
 COSTUMES["mia"] = {head=true, body=true, frontarm2=true, backarm2=true, frontleg2=true, backleg2=true}
@@ -58,7 +59,16 @@ BACKLEG1 = entity_getBoneByIdx(n, 6)
 BACKLEG2 = entity_getBoneByIdx(n, 7)
 BACKLEG3 = entity_getBoneByIdx(n, 12)
 
-function SET_LEGS(costume)
+function SET_LEGS(set)
+	local c = 1
+	while(COSTUMES[c] ~= set) do
+		c = c + 1
+	end
+	
+	LEGS = c
+	
+	local costume = COSTUMES[set]
+	
 	if(costume.leg1) then
 		bone_setTexture(FRONTLEG1, PATH..COSTUMES[LEGS].."-leg1")
 		bone_setTexture(BACKLEG1, PATH..COSTUMES[LEGS].."-leg1")
@@ -108,7 +118,16 @@ function SET_LEGS(costume)
 	end
 end
 
-function SET_ARMS(costume)
+function SET_ARMS(set)
+	local c = 1
+	while(COSTUMES[c] ~= set) do
+		c = c + 1
+	end
+	
+	ARMS = c
+	
+	local costume = COSTUMES[set]
+	
 	if(costume.frontarm1) then
 		bone_setTexture(FRONTARM1, PATH..COSTUMES[ARMS].."-frontarm1")
 	else

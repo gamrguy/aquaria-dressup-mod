@@ -24,12 +24,15 @@ function update(me, dt)
 	--setCostume(COSTUMES[BODY].."_body")
 	--setCostume(COSTUMES[ARMS].."-arms")
 	--setCostume(COSTUMES[LEGS].."-legs")
-	if(not STOPPED) then
+	if(getCostume() ~= COSTUMES[HEAD]) then
 		if(COSTUMES[HEAD] == "naija2") then
 			setCostume("")
 		else
 			setCostume(COSTUMES[HEAD])
 		end
+	end
+	
+	if(not STOPPED) then
 		avatar_toggleCape(false)
 	end
 end
@@ -39,6 +42,12 @@ function msg(me, msg)
 		STOPPED = true
 		entity_setRiding(n, nil)
 		entity_scale(n, origScaleX, origScaleY)
-		avatar_toggleCape(true)
+		
+		for key, value in pairs(COSTUMES["capes"]) do
+			if(COSTUMES[HEAD] == value) then
+				avatar_toggleCape(true)
+				break
+			end
+		end
 	end
 end

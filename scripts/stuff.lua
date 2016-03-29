@@ -1,7 +1,7 @@
 -- here we have a lot of "global" stuff that apparently isn't "really" global. lol.
 -- here's the list of costumes in numerical indexing, for switching the heads about
 PATH = "naija/"
-COSTUMES = {"naija2", "etc", "cc", "mithalan", "teen", "jelly", "mutant", "end", "zerosuit", "mia", "mithalas_girl1", "mithalas_girl2"}
+COSTUMES = {"naija2", "etc", "cc", "urchin", "mithalan", "teen", "jelly", "mutant", "end", "zerosuit", "mia", "mithalas_girl1", "mithalas_girl2", "sunkenmom", "priestess", "li", "pirate"}
 
 -- now here's the costume details, indexed by name
 -- these show which costume has which unique body parts
@@ -9,6 +9,7 @@ COSTUMES = {"naija2", "etc", "cc", "mithalan", "teen", "jelly", "mutant", "end",
 COSTUMES["naija2"] = {head=true, body=true, frontarm1=true, frontarm2=true, frontarm3=true, backarm1=true, backarm2=true, backarm3=true, frontleg1=true, frontleg2=true, frontleg3=true, backleg1=true, backleg2=true, backleg3=true}
 COSTUMES["etc"] = {head=true, body=true, frontarm1=true, frontarm2=true, backarm1=true, backarm2=true, frontleg1=true, frontleg2=true, frontleg3=true, backleg1=true, backleg2=true, backleg3=true}
 COSTUMES["cc"] = {head=true, body=true, frontarm2=true, frontarm3=true, backarm2=true, backarm3=true, leg2=true, leg3=true}
+COSTUMES["urchin"] = {head=true, body=true, frontarm1=true, frontarm2=true, backarm1=true, backarm2=true, frontleg1=true, frontleg2=true, frontleg3=true, backleg1=true, backleg2=true, backleg3=true}
 COSTUMES["mithalan"] = {head=true, body=true, frontarm1=true, frontarm2=true, backarm1=true, backarm2=true, frontleg1=true, frontleg2=true, frontleg3=true, backleg1=true, backleg2=true, backleg3=true}
 COSTUMES["teen"] = {head=true, body=true, frontarm1=true, frontarm2=true, backarm1=true, backarm2=true, frontleg1=true, frontleg2=true, frontleg3=true, backleg1=true, backleg2=true, backleg3=true}
 COSTUMES["jelly"] = {head=true, body=true, frontarm1=true, frontarm2=true, backarm1=true, backarm2=true, frontleg1=true, frontleg2=true, frontleg3=true, backleg1=true, backleg2=true, backleg3=true}
@@ -18,7 +19,11 @@ COSTUMES["zerosuit"] = {body=true, frontarm1=true, frontarm2=true, frontarm3=tru
 COSTUMES["mia"] = {head=true, body=true, frontarm2=true, backarm2=true, frontleg2=true, backleg2=true}
 COSTUMES["mithalas_girl1"] = {head=true, body=true, frontarm2=true, backarm2=true, legs="end"}
 COSTUMES["mithalas_girl2"] = {head=true, body=true, arms="mithalas_girl1", legs="end"}
-
+COSTUMES["sunkenmom"] = {head=true, body=true, frontarm1=true, backarm1=true, frontleg1=true, backleg1=true}
+COSTUMES["priestess"] = {head=true, body=true, frontarm1=true, frontarm2=true, backarm1=true, backarm2=true, frontleg1=true, frontleg2=true, backleg1=true, backleg2=true}
+COSTUMES["li"] = {head=true, body=true, frontarm1=true, frontarm2=true, frontarm3=true, backarm1=true, backarm2=true, backarm3=true, frontleg1=true, frontleg2=true, frontleg3=true, backleg1=true, backleg2=true, backleg3=true}
+COSTUMES["pirate"] = {head=true, body=true, frontarm1=true, frontarm2=true, backarm1=true, backarm2=true, frontleg1=true, frontleg2=true, frontleg3=true, backleg1=true, backleg2=true, backleg3=true}
+COSTUMES["capes"] = {"naija2", "etc", "jelly", "mia", "priestess"}
 -- counters representing the current costume of each part
 HEAD = 1
 BODY = 1

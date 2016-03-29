@@ -58,3 +58,8 @@
 57 naija/li-head
 58 naija/pirate-head
 59 naija/luciengf-head
+60 naija/seahorse-head
+61 naija/beast-head
+62 naija/energyform-head
+63 naija/veggie-head
+64 naija/sunform-head

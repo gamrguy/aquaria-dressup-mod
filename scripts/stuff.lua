@@ -1,7 +1,7 @@
 -- so this is the file with all the important stuff shared everywhere
 -- here's the list of costumes in numerical indexing, for switching the heads about
 PATH = "naija/"
-COSTUMES = {"naija2", "etc", "cc", "urchin", "mithalan", "teen", "jelly", "mutant", "end", "zerosuit", "mia", "mithalas_girl1", "mithalas_girl2", "sunkenmom", "priestess", "li", "pirate", "luciengf"}
+COSTUMES = {"naija2", "etc", "cc", "urchin", "mithalan", "teen", "jelly", "mutant", "seahorse", "end", "energyform", "beast", "sunform", "zerosuit", "mia", "mithalas_girl1", "mithalas_girl2", "sunkenmom", "priestess", "li", "pirate", "luciengf"}
 
 -- now here's the costume details, indexed by name
 -- these show which costume has which unique body parts
@@ -14,7 +14,11 @@ COSTUMES["mithalan"] = {head=true, body=true, frontarm1=true, frontarm2=true, ba
 COSTUMES["teen"] = {head=true, body=true, frontarm1=true, frontarm2=true, backarm1=true, backarm2=true, frontleg1=true, frontleg2=true, frontleg3=true, backleg1=true, backleg2=true, backleg3=true}
 COSTUMES["jelly"] = {head=true, body=true, frontarm1=true, frontarm2=true, backarm1=true, backarm2=true, frontleg1=true, frontleg2=true, frontleg3=true, backleg1=true, backleg2=true, backleg3=true}
 COSTUMES["mutant"] = {head=true, body=true, frontarm1=true, frontarm2=true, frontarm3=true, backarm1=true, backarm2=true, backarm3=true, leg1=true, leg2=true, leg3=true}
+COSTUMES["seahorse"] = {head=true, body=true, frontarm2=true, backarm2=true, frontleg2=true, frontleg3=true, backleg2=true, backleg3=true}
 COSTUMES["end"] = {body=true, frontarm2=true, backarm2=true, frontleg2=true, backleg2=true}
+COSTUMES["energyform"] = {body=true, frontarm2=true, backarm2=true, frontleg2=true, backleg2=true, frontleg3=true, backleg3=true}
+COSTUMES["beast"] = {body=true, frontarm1=true, frontarm2=true, backarm1=true, backarm2=true, leg2=true, leg3=true}
+COSTUMES["sunform"] = {body=true, frontarm2=true, backarm2=true, leg2=true, leg3=true}
 COSTUMES["zerosuit"] = {body=true, frontarm1=true, frontarm2=true, frontarm3=true, backarm1=true, backarm2=true, backarm3=true, frontleg1=true, frontleg2=true, frontleg3=true, backleg1=true, backleg2=true, backleg3=true}
 COSTUMES["mia"] = {head=true, body=true, frontarm2=true, backarm2=true, frontleg2=true, backleg2=true}
 COSTUMES["mithalas_girl1"] = {head=true, body=true, frontarm2=true, backarm2=true, legs="end"}

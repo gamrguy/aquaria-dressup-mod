@@ -22,7 +22,11 @@ function activate(me)
 		c = c + 1
 	end
 	
-	HEAD = c
+	if(COSTUMES[set].head) then
+		HEAD = c
+	else
+		HEAD = 1
+	end
 	BODY = c
 	ARMS = c
 	LEGS = c

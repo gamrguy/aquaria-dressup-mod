@@ -8,19 +8,43 @@ Also keeps Naija with the correct clothing items.
 ]]--
 
 dofile("scripts/stuff.lua")
-STOPPED = false
-local n = getNaija()
-local origScaleX, origScaleY = entity_getScale(n)
+
+v.origScaleX = 0
+v.origScaleY = 0
 
 function init(me)
+    STOPPED = false
+    local n = getNaija()
 	entity_setRiding(n, n)
 	entity_scale(n, 2, 2)
 	avatar_toggleCape(false)
 	--local bone = entity_getBoneByIdx(n, 0)
 	--bone_setTexture(bone, "naija/dfn-body")
+    v.origScaleX, v.origScaleY = entity_getScale(n)
+    
 end
 
 function update(me, dt)
+
+    local n = getNaija()
+    BODY_BONE = entity_getBoneByIdx(n, 0)
+
+    FRONTARM1 = entity_getBoneByIdx(n, 2)
+    FRONTARM2 = entity_getBoneByIdx(n, 3)
+    FRONTARM3 = entity_getBoneByIdx(n, 11)
+
+    BACKARM1 = entity_getBoneByIdx(n, 4)
+    BACKARM2 = entity_getBoneByIdx(n, 5)
+    BACKARM3 = entity_getBoneByIdx(n, 10)
+
+    FRONTLEG1 = entity_getBoneByIdx(n, 8)
+    FRONTLEG2 = entity_getBoneByIdx(n, 9)
+    FRONTLEG3 = entity_getBoneByIdx(n, 13)
+
+    BACKLEG1 = entity_getBoneByIdx(n, 6)
+    BACKLEG2 = entity_getBoneByIdx(n, 7)
+    BACKLEG3 = entity_getBoneByIdx(n, 12)
+
 	--setCostume(COSTUMES[BODY].."_body")
 	--setCostume(COSTUMES[ARMS].."-arms")
 	--setCostume(COSTUMES[LEGS].."-legs")
@@ -39,10 +63,11 @@ function update(me, dt)
 end
 
 function msg(me, msg)
+    local n = getNaija()
 	if(msg == "stop") then
 		STOPPED = true
 		entity_setRiding(n, nil)
-		entity_scale(n, origScaleX, origScaleY)
+		entity_scale(n, v.origScaleX, v.origScaleY)
 		
 		for key, value in pairs(COSTUMES["capes"]) do
 			if(COSTUMES[HEAD] == value) then

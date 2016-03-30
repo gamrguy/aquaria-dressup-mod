@@ -9,9 +9,6 @@ Also keeps Naija with the correct clothing items.
 
 dofile("scripts/stuff.lua")
 
-v.origScaleX = 0
-v.origScaleY = 0
-
 function init(me)
     STOPPED = false
     local n = getNaija()
@@ -20,7 +17,6 @@ function init(me)
 	avatar_toggleCape(false)
 	--local bone = entity_getBoneByIdx(n, 0)
 	--bone_setTexture(bone, "naija/dfn-body")
-    v.origScaleX, v.origScaleY = entity_getScale(n)
     
 end
 
@@ -67,7 +63,7 @@ function msg(me, msg)
 	if(msg == "stop") then
 		STOPPED = true
 		entity_setRiding(n, nil)
-		entity_scale(n, v.origScaleX, v.origScaleY)
+		entity_scale(n, 0.5, 0.5)
 		
 		for key, value in pairs(COSTUMES["capes"]) do
 			if(COSTUMES[HEAD] == value) then

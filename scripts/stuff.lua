@@ -39,25 +39,6 @@ LEGS = 1
 -- list of bones for ease of reference
 HEAD_BONE = 1
 
-local n = getNaija()
-
-BODY_BONE = entity_getBoneByIdx(n, 0)
-
-FRONTARM1 = entity_getBoneByIdx(n, 2)
-FRONTARM2 = entity_getBoneByIdx(n, 3)
-FRONTARM3 = entity_getBoneByIdx(n, 11)
-
-BACKARM1 = entity_getBoneByIdx(n, 4)
-BACKARM2 = entity_getBoneByIdx(n, 5)
-BACKARM3 = entity_getBoneByIdx(n, 10)
-
-FRONTLEG1 = entity_getBoneByIdx(n, 8)
-FRONTLEG2 = entity_getBoneByIdx(n, 9)
-FRONTLEG3 = entity_getBoneByIdx(n, 13)
-
-BACKLEG1 = entity_getBoneByIdx(n, 6)
-BACKLEG2 = entity_getBoneByIdx(n, 7)
-BACKLEG3 = entity_getBoneByIdx(n, 12)
 
 function SET_LEGS(set)
 	local c = 1

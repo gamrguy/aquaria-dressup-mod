@@ -113,8 +113,10 @@ function update(me, dt)
     
     if BODY ~= v.oldBODY then
         updateCape()
-        avatar_toggleCape(false)
         v.oldBODY = BODY
+    end
+    if not STOPPED then
+        avatar_toggleCape(false)
     end
 end
 

@@ -1,33 +1,22 @@
-if v == nil then v = {} end
+
+local xlat = {
+    naija2 = "Naija",
+    energyform = "Energy",
+    veggie = "Nature",
+    cc = "Crab",
+    etc = "Krotite",
+    mithalas_girl1 = "Mithalan 1",
+    mithalas_girl2 = "Mithalan 2",
+    mithalan = "Princess",
+}
+
+v.set = ""
+v.text = 0
 
 function init(me)
-	local t={} ; local i=1
-	for str in string.gmatch(node_getName(me), "([^".." ".."]+)") do
-		t[i] = str
-		i = i + 1
-	end
-	
-	v.set = t[2]
-	
-	if(v.set == "naija2") then
-		v.text = createBitmapText("Naija", 1500, 0, 0)
-	elseif(v.set == "energyform") then
-		v.text = createBitmapText("Energy", 1500, 0, 0)
-	elseif(v.set == "veggie") then
-		v.text = createBitmapText("Nature", 1500, 0, 0)
-	elseif(v.set == "cc") then
-		v.text = createBitmapText("Crab", 1500, 0, 0)
-	elseif(v.set == "etc") then
-		v.text = createBitmapText("Krotite", 1500, 0, 0)
-	elseif(v.set == "mithalas_girl1") then
-		v.text = createBitmapText("Mithalan 1", 1500, 0, 0)
-	elseif(v.set == "mithalas_girl2") then
-		v.text = createBitmapText("Mithalan 2", 1500, 0, 0)
-	elseif(v.set == "mithalan") then
-		v.text = createBitmapText("Princess", 1500, 0, 0)
-	else
-		v.text = createBitmapText(v.set, 1500, 0, 0)
-	end
+	--v.set = node_getName(me):splitws()[2]
+    v.set = node_getContent(me) -- easier
+	v.text = createBitmapText(xlat[v.set] or v.set, 1500, 0, 0)
 end
 
 function update(me, dt)
@@ -35,20 +24,17 @@ function update(me, dt)
 		node_setCursorActivation(me, true)
 	end
 	
-	if(node_isPositionIn(me, getMouseWorldPos())) then
-		text_setPosition(v.text, getMouseWorldPos())
+    local x, y = getMouseWorldPos()
+	if(node_isPositionIn(me, x, y)) then
+		text_setPosition(v.text, x, y)
+		text_alpha(v.text, 1)
 	else
-		text_setPosition(v.text, 0, 0)
+		text_alpha(v.text, 0)
 	end
 end
 
 function activate(me)
-	local t={} ; local i=1
-	for str in string.gmatch(node_getName(me), "([^".." ".."]+)") do
-		t[i] = str
-		i = i + 1
-	end
-	local set = t[2]
+	local set = v.set
 	
 	local c = 1
 	while(COSTUMES[c] ~= set) do

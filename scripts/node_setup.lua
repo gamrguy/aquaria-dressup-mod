@@ -71,6 +71,9 @@ function msg(me, msg)
 				break
 			end
 		end
+		
+		ANIM = 1
+		entity_idle(n)
 	end
 	
 	if(msg == "start") then

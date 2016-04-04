@@ -30,11 +30,13 @@ COSTUMES["li"] = {head=true, body=true, frontarm1=true, frontarm2=true, frontarm
 COSTUMES["pirate"] = {head=true, body=true, frontarm1=true, frontarm2=true, backarm1=true, backarm2=true, frontleg1=true, frontleg2=true, frontleg3=true, backleg1=true, backleg2=true, backleg3=true}
 COSTUMES["luciengf"] = {head=true, body=true, frontarm2=true, backarm2=true, frontleg2=true, backleg2=true}
 COSTUMES["capes"] = {"naija2", "etc", "jelly", "mia", "priestess", "sunkenmom"}
+COSTUMES["anims"] = {"idle", "swim", "swim2", "backflip", "swimextra-1", "swimextra-2", "swimextra-3", "swimextra-4"}
 -- counters representing the current costume of each part
 HEAD = 1
 BODY = 1
 ARMS = 1
 LEGS = 1
+ANIM = 1
 
 -- list of bones for ease of reference
 HEAD_BONE = 1

@@ -12,6 +12,30 @@ dofile("scripts/stuff.lua")
 local SCALE_DEFAULT = 0.5
 local SCALE = 1.6
 
+v.cape = 0
+v.capebone = 0
+v.oldBODY = -1
+
+
+local function updateCape(s)
+    if v.cape == 0 then
+        return
+    end
+    local sx, sy = entity_getScale(getNaija())
+    local c = COSTUMES[BODY]
+    local has = COSTUMES.hascape[c]
+    entity_msg(v.cape, "visible", has)
+    if has then
+        local tex = "naija/cape"
+        if c ~= "naija2" then
+            tex = tex .. "-" .. c
+        end
+        bone_setTexture(v.capebone, tex)
+        entity_msg(v.cape, "hairdata", tex, nil, 4*sx, 22*sy)
+    end
+    return true
+end
+
 local function start(init)
     local n = getNaija()
     local pos = getNode("naijastart")
@@ -34,12 +58,21 @@ local function stop()
     STOPPED = true
     entity_setRiding(n, nil)
     entity_scale(n, SCALE_DEFAULT, SCALE_DEFAULT)
-    avatar_toggleCape(COSTUMES.hascape[COSTUMES[BODY]])
+    if not updateCape() then -- show internal cape only if not using custom cape
+        avatar_toggleCape(COSTUMES.hascape[COSTUMES[BODY]])
+    end
     ANIM = 1
     entity_idle(n)
 end
 
 function init(me)
+    local n = getNaija()
+    v.capebone = entity_getBoneByName(n, "Cape")
+    local capepos = entity_getBoneByName(n, "CapePos")
+    if v.capebone ~= 0 and capepos ~= 0 then
+        v.cape = createEntity("cape")
+        entity_msg(v.cape, "attach", n, capepos, v.capebone)
+    end
     start(true)
 	--local bone = entity_getBoneByIdx(n, 0)
 	--bone_setTexture(bone, "naija/dfn-body")
@@ -77,6 +110,12 @@ function update(me, dt)
 			setCostume(COSTUMES[HEAD])
 		end
 	end
+    
+    if BODY ~= v.oldBODY then
+        updateCape()
+        avatar_toggleCape(false)
+        v.oldBODY = BODY
+    end
 end
 
 function msg(me, msg)
@@ -84,5 +123,5 @@ function msg(me, msg)
         stop()
 	elseif(msg == "start") then
         start()
-	end
+    end
 end

@@ -30,7 +30,17 @@ COSTUMES["li"] = {head=true, body=true, frontarm1=true, frontarm2=true, frontarm
 COSTUMES["pirate"] = {head=true, body=true, frontarm1=true, frontarm2=true, backarm1=true, backarm2=true, frontleg1=true, frontleg2=true, frontleg3=true, backleg1=true, backleg2=true, backleg3=true}
 COSTUMES["luciengf"] = {head=true, body=true, frontarm2=true, backarm2=true, frontleg2=true, backleg2=true}
 COSTUMES["capes"] = {"naija2", "etc", "jelly", "mia", "priestess", "sunkenmom"}
-COSTUMES["anims"] = {"idle", "swim", "swim2", "backflip", "swimextra-1", "swimextra-2", "swimextra-3", "swimextra-4"}
+-- not all anims, but a nice selection
+COSTUMES["anims"] = {"idle", "frozen", "swim", "backflip2", "burst", "trailerintroanim2", "agony", "sitthrone", "changecostume", "energyidle", "energychargeattack", "sitback", "pushforward", "pushback", "walllookup", "dead", "trapped", "trapped2", "sleep",
+-- FG's custom ones below
+"idledrunk", "idledrunk2", "holdswim", "smashed", "plank", "walk", "run", "stand", "walk2", "walk3", "run2", "standextra-1", "standextra-2", "standextra-3",  "standextra-4", "standextra-5", "liewait", "glide", "glidedown", "glidedown2", "sunbeam", "energyidle2", "energycharge2", "checkoutidle3", "crouch1", "crouch2", "crouch3", "darkspiritidle" }
+-- convert capes to LUT
+COSTUMES.hascape = {}
+for _, cape in pairs(COSTUMES.capes) do
+    COSTUMES.hascape[cape] = true
+end
+
+
 -- counters representing the current costume of each part
 HEAD = 1
 BODY = 1
@@ -142,4 +152,13 @@ function SET_ARMS(set)
 	else
 		bone_setTexture(BACKARM3, PATH.."naija2-backarm3")
 	end
+end
+
+function string:splitws()
+	local t={} ; local i=1
+	for str in self:gmatch("([^%s]+)") do
+		t[i] = str
+		i = i + 1
+	end
+    return t
 end

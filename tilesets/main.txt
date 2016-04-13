@@ -63,4 +63,4 @@
 62 naija/energyform-head
 63 naija/veggie-head
 64 naija/sunform-head
-65 swim_button
+65 zerosuit-costume

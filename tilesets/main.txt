@@ -88,3 +88,4 @@
 
 65 zerosuit-costume
 66 end-costume
+67 naija/corrupted-head

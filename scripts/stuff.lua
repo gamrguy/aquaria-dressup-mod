@@ -1,7 +1,7 @@
 -- so this is the file with all the important stuff shared everywhere
 -- here's the list of costumes in numerical indexing, for switching the heads about
 PATH = "naija/"
-COSTUMES = {"naija2", "etc", "cc", "urchin", "mithalan", "teen", "jelly", "mutant", "seahorse", "end", "energyform", "beast", "veggie", "sunform", "zerosuit", "mia", "mithalas_girl1", "mithalas_girl2", "sunkenmom", "priestess", "li", "pirate", "luciengf"}
+COSTUMES = {"naija2", "etc", "cc", "urchin", "mithalan", "teen", "jelly", "mutant", "seahorse", "end", "energyform", "beast", "veggie", "sunform", "zerosuit", "mia", "mithalas_girl1", "mithalas_girl2", "sunkenmom", "priestess", "li", "pirate", "luciengf", "corrupted"}
 
 -- now here's the costume details, indexed by name
 -- these show which costume has which unique body parts
@@ -29,7 +29,8 @@ COSTUMES["priestess"] = {head=true, body=true, frontarm1=true, frontarm2=true, b
 COSTUMES["li"] = {head=true, body=true, frontarm1=true, frontarm2=true, frontarm3=true, backarm1=true, backarm2=true, backarm3=true, frontleg1=true, frontleg2=true, frontleg3=true, backleg1=true, backleg2=true, backleg3=true}
 COSTUMES["pirate"] = {head=true, body=true, frontarm1=true, frontarm2=true, backarm1=true, backarm2=true, frontleg1=true, frontleg2=true, frontleg3=true, backleg1=true, backleg2=true, backleg3=true}
 COSTUMES["luciengf"] = {head=true, body=true, frontarm2=true, backarm2=true, frontleg2=true, backleg2=true}
-COSTUMES["capes"] = {"naija2", "etc", "jelly", "mia", "priestess", "sunkenmom"}
+COSTUMES["corrupted"] = {head=true, body=true, frontarm1=true, frontarm2=true, backarm1=true, backarm2=true, frontleg1=true, frontleg2=true, frontleg3=true, backleg1=true, backleg2=true, backleg3=true}
+COSTUMES["capes"] = {"naija2", "etc", "jelly", "mia", "priestess", "sunkenmom", "corrupted"}
 -- not all anims, but a nice selection
 COSTUMES["anims"] = {"idle", "frozen", "swim", "backflip2", "burst", "trailerintroanim2", "agony", "sitthrone", "changecostume", "energyidle", "energychargeattack", "sitback", "pushforward", "pushback", "walllookup", "dead", "trapped", "trapped2", "sleep",
 -- FG's custom ones below

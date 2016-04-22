@@ -25,7 +25,6 @@ COSTUMES["sunform"] = {head="naija2", frontarm2=true, backarm2=true, leg2=true, 
 --zerosuit was cool, but doesn't play nice with new system (feet, full body coverage, etc.)
 --COSTUMES["zerosuit"] = {head="naija2", frontarm1=true, frontarm2=true, frontarm3=true, backarm1=true, backarm2=true, backarm3=true, frontleg1=true, frontleg2=true, frontleg3=true, backleg1=true, backleg2=true, backleg3=true}
 COSTUMES["mia"] = {frontarm2=true, backarm2=true, leg2=true}
---TODO: mithalas_girl1 body may need fixing for more breast coverage...
 COSTUMES["mithalas_girl1"] = {frontarm2=true, backarm2=true, legs="end"}
 COSTUMES["mithalas_girl2"] = {arms="mithalas_girl1", legs="end"}
 COSTUMES["sunkenmom"] = {frontarm1=true, backarm1=true, leg1=true}

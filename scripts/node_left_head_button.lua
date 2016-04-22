@@ -12,10 +12,6 @@ function update(me, dt)
 end
 
 function activate(me)
-	repeat
-		HEAD = HEAD - 1
-		if(HEAD < 1) then
-			HEAD = #COSTUMES
-		end
-	until(COSTUMES[COSTUMES[HEAD]].head) 
+	local manager = getNode("clothesmanager")
+	node_msg(manager, "prev", "head")
 end

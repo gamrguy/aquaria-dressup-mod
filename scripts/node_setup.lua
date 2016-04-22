@@ -15,14 +15,15 @@ local SCALE = 1.6
 v.cape = 0
 v.capebone = 0
 v.oldBODY = -1
-
+v.head = 1
+v.currentCape = 1
 
 local function updateCape(s)
     if v.cape == 0 then
         return
     end
     local sx, sy = entity_getScale(getNaija())
-    local c = COSTUMES[BODY]
+    local c = COSTUMES[s]
     local has = COSTUMES.hascape[c]
     entity_msg(v.cape, "visible", has)
     if has then
@@ -51,6 +52,8 @@ local function start(init)
     entity_scale(n, SCALE, SCALE)
     avatar_toggleCape(false)
     STOPPED = false
+	
+	updateCape(v.currentCape)
 end
 
 local function stop()
@@ -74,56 +77,21 @@ function init(me)
         entity_msg(v.cape, "attach", n, capepos, v.capebone)
     end
     start(true)
-	--local bone = entity_getBoneByIdx(n, 0)
-	--bone_setTexture(bone, "naija/dfn-body")
 end
 
 function update(me, dt)
-
-    local n = getNaija()
-    BODY_BONE = entity_getBoneByIdx(n, 0)
-
-    FRONTARM1 = entity_getBoneByIdx(n, 2)
-    FRONTARM2 = entity_getBoneByIdx(n, 3)
-    FRONTARM3 = entity_getBoneByIdx(n, 11)
-
-    BACKARM1 = entity_getBoneByIdx(n, 4)
-    BACKARM2 = entity_getBoneByIdx(n, 5)
-    BACKARM3 = entity_getBoneByIdx(n, 10)
-
-    FRONTLEG1 = entity_getBoneByIdx(n, 8)
-    FRONTLEG2 = entity_getBoneByIdx(n, 9)
-    FRONTLEG3 = entity_getBoneByIdx(n, 13)
-
-    BACKLEG1 = entity_getBoneByIdx(n, 6)
-    BACKLEG2 = entity_getBoneByIdx(n, 7)
-    BACKLEG3 = entity_getBoneByIdx(n, 12)
-
-	--setCostume(COSTUMES[BODY].."_body")
-	--setCostume(COSTUMES[ARMS].."-arms")
-	--setCostume(COSTUMES[LEGS].."-legs")
-	local isNaijaMatch = (COSTUMES[HEAD] == "naija2") and (getCostume() == "")
-	if(getCostume() ~= COSTUMES[HEAD] and not isNaijaMatch) then
-		if(COSTUMES[HEAD] == "naija2") then
-			setCostume("")
-		else
-			setCostume(COSTUMES[HEAD])
-		end
-	end
-    
-    if BODY ~= v.oldBODY then
-        updateCape()
-        v.oldBODY = BODY
-    end
     if not STOPPED then
         avatar_toggleCape(false)
     end
 end
 
-function msg(me, msg)
-	if(msg == "stop") then
+function msg(me, msg, msg2)
+	if msg == "stop" then
         stop()
-	elseif(msg == "start") then
+	elseif msg == "start" then
         start()
-    end
+	elseif msg == "cape" then
+		v.currentCape = msg2
+		updateCape(msg2)
+	end
 end

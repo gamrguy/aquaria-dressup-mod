@@ -34,45 +34,6 @@ function update(me, dt)
 end
 
 function activate(me)
-	local set = v.set
-	
-	local c = 1
-	while(COSTUMES[c] ~= set) do
-		c = c + 1
-	end
-	
-	if(COSTUMES[set].head) then
-		HEAD = c
-	else
-		HEAD = 1
-	end
-	BODY = c
-	ARMS = c
-	LEGS = c
-	
-	bone_setTexture(BODY_BONE, PATH..set.."-body")
-	
-	local costume = COSTUMES[set]
-	
-	if(costume.arms) then
-		c = 1
-		while(COSTUMES[c] ~= costume.arms) do
-			c = c + 1
-		end
-		ARMS = c
-		SET_ARMS(costume.arms)
-	else
-		SET_ARMS(set)
-	end
-	
-	if(costume.legs) then
-		c = 1
-		while(COSTUMES[c] ~= costume.legs) do
-			c = c + 1
-		end
-		LEGS = c
-		SET_LEGS(costume.legs)
-	else
-		SET_LEGS(set)
-	end
+	local manager = getNode("clothesmanager")
+	node_msg(manager, v.set)
 end

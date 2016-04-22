@@ -6,12 +6,6 @@ function update(me, dt)
 end
 
 function activate(me)
-	repeat
-		ARMS = ARMS + 1
-		if(ARMS > #COSTUMES) then
-			ARMS = 1
-		end
-	until(not COSTUMES[COSTUMES[ARMS]].arms)
-	
-	SET_ARMS(COSTUMES[ARMS])
+	local manager = getNode("clothesmanager")
+	node_msg(manager, "next", "arms")
 end

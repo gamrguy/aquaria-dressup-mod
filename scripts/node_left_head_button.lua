@@ -1,9 +1,3 @@
---[[
-This is a button for switching Naija's head.
-It utilizes the HEAD global variable 
-initiated in node_setup.
-]]--
-
 function init(me)
 end
 

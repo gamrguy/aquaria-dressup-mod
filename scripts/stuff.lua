@@ -16,9 +16,9 @@ COSTUMES["jelly"] = {frontarm2=true, backarm2=true, leg2=true}
 COSTUMES["mutant"] = {frontarm1=true, frontarm2=true, frontarm3=true, backarm1=true, backarm2=true, backarm3=true, leg1=true, leg2=true, leg3=true}
 COSTUMES["seahorse"] = {frontarm2=true, backarm2=true, leg2=true, leg3=true}
 COSTUMES["end"] = {head="naija2"}
-COSTUMES["energyform"] = {head="naija2", frontarm2=true, backarm2=true, leg2=true, leg3=true}
+COSTUMES["energyform"] = {frontarm2=true, backarm2=true, leg2=true, leg3=true}
 COSTUMES["beast"] = {frontarm1=true, frontarm2=true, frontarm3=true, backarm1=true, backarm2=true, backarm3=true, leg2=true, leg3=true}
-COSTUMES["veggie"] = {head="naija2", frontarm1=true, frontarm2=true, backarm1=true, backarm2=true, leg2=true, leg3=true}
+COSTUMES["veggie"] = {frontarm1=true, frontarm2=true, backarm1=true, backarm2=true, leg2=true, leg3=true}
 COSTUMES["sunform"] = {head="naija2", frontarm2=true, backarm2=true, leg2=true, leg3=true}
 --zerosuit was cool, but doesn't play nice with new system (feet, full body coverage, etc.)
 --COSTUMES["zerosuit"] = {head="naija2", frontarm1=true, frontarm2=true, frontarm3=true, backarm1=true, backarm2=true, backarm3=true, frontleg1=true, frontleg2=true, frontleg3=true, backleg1=true, backleg2=true, backleg3=true}

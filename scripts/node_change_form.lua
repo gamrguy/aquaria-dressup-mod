@@ -20,4 +20,7 @@ function activate(me)
 	else
 		changeForm(FORM_SUN)
 	end
+	
+	local manager = getNode("clothesmanager")
+	node_msg(manager, "update them clothes")
 end

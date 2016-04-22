@@ -144,11 +144,22 @@ local function set_arms(set)
 end
 local function set_helmet(set)
 	switchToSet("head", set)
+	if(COSTUMES[COSTUMES[v.head]].usesDefaultHair) then
+		bone_setTexture(v.HAIR_BONE, PATH..COSTUMES["default_hair"][getForm()+1].."-helmet")
+	else
+		bone_setTexture(v.HAIR_BONE, "transparent")
+	end
 	
-	if(COSTUMES[v.head] == "naija2") then
+	if COSTUMES[COSTUMES[v.head]].bald then
 		bone_setTexture(v.HEAD_BONE, "transparent")
 	else
 		bone_setTexture(v.HEAD_BONE, PATH..COSTUMES[v.head].."-helmet")
+	end
+	
+	if COSTUMES[COSTUMES[v.head]].noEars then
+		bone_setTexture(v.EARS_BONE, "transparent")
+	else
+		bone_setTexture(v.EARS_BONE, PATH..COSTUMES["ears"][getForm()+1].."-ears")
 	end
 end
 local function set_body(set)
@@ -173,6 +184,8 @@ function update(me, dt)
     local n = getNaija()
     v.BODY_BONE = entity_getBoneByIdx(n, 0)
 	v.HEAD_BONE = entity_getBoneByIdx(n, 34)
+	v.HAIR_BONE = entity_getBoneByIdx(n, 38)
+	v.EARS_BONE = entity_getBoneByIdx(n, 39)
 	v.BONE_ARMOR = entity_getBoneByIdx(n, 24)
 
     v.FRONTARM1 = entity_getBoneByIdx(n, 35)

@@ -38,7 +38,9 @@
     <Bone idx="13" gfx="Naija/teen-frontleg3" pidx="9" name="LeftFoot" fh="0" fv="0" gc="1" cr="0" cp="0 0" rbp="1"/>
 	<Bone idx="33" gfx="Naija/naija2-leg3-Armor" pidx="13" name="FrontFoot-armor" fh="0" fv="0" gc="1" cr="0" cp="0 0" rbp="0"/>
     <Bone idx="1" gfx="naija/Naija2-Head" pidx="0" name="Head" fh="0" fv="0" gc="1" cr="0" cp="0 0" strip="1 8" sz="0.99 0.99"/>
-	<Bone idx="34" gfx="transparent" pidx="1" name="Helmet" fh="0" fv="0" gc="1" cr="0" cp="0 0" rbp="0"/>
+	<Bone idx="39" gfx="transparent" pidx="1" name="Ears" fh="0" fv="0" gc="1" cr="0" cp="0 0" rbp="0"/>
+	<Bone idx="38" gfx="transparent" pidx="1" name="Hair" fh="0" fv="0" gc="1" cr="0" cp="0 0" rbp="0"/>
+	<Bone idx="34" gfx="Naija/Naija2-Helmet" pidx="1" name="Helmet" fh="0" fv="0" gc="1" cr="0" cp="0 0" rbp="0"/>
     <Bone idx="17" gfx="Naija/eyeglow" pidx="1" name="EyeGlow" fh="0" fv="0" gc="0" cr="0" rq="0" cp="0 0"/>
     <Bone idx="2" gfx="Naija/Naija2-FrontArm1" pidx="0" name="LeftArm1" fh="0" fv="0" gc="1" cr="0" cp="0 0"/>
 	<Bone idx="35" gfx="transparent" pidx="2" name="LeftArm1-armor" fh="0" fv="0" gc="1" cr="0" cp="0 0" rbp="0"/>

@@ -21,7 +21,7 @@ COSTUMES["end"] = {head="naija2"}
 COSTUMES["energyform"] = {frontarm2=true, backarm2=true, leg2=true, leg3=true}
 COSTUMES["beast"] = {noEars=true, frontarm1=true, frontarm2=true, frontarm3=true, backarm1=true, backarm2=true, backarm3=true, leg2=true, leg3=true}
 COSTUMES["veggie"] = {frontarm1=true, frontarm2=true, backarm1=true, backarm2=true, leg2=true, leg3=true}
-COSTUMES["sunform"] = {head="naija2", frontarm2=true, backarm2=true, leg2=true, leg3=true}
+COSTUMES["sunform"] = {frontarm2=true, backarm2=true, leg2=true, leg3=true}
 --zerosuit was cool, but doesn't play nice with new system (feet, full body coverage, etc.)
 --COSTUMES["zerosuit"] = {head="naija2", frontarm1=true, frontarm2=true, frontarm3=true, backarm1=true, backarm2=true, backarm3=true, frontleg1=true, frontleg2=true, frontleg3=true, backleg1=true, backleg2=true, backleg3=true}
 COSTUMES["mia"] = {frontarm2=true, backarm2=true, leg2=true}
@@ -31,7 +31,7 @@ COSTUMES["sunkenmom"] = {frontarm1=true, backarm1=true, leg1=true}
 COSTUMES["priestess"] = {frontarm1=true, frontarm2=true, backarm1=true, backarm2=true, leg1=true, leg2=true}
 --TODO: decide whether to keep Li costume in, as it's another fullbody overlay (though doesn't have feet problems)
 COSTUMES["li"] = {frontarm1=true, frontarm2=true, frontarm3=true, backarm1=true, backarm2=true, backarm3=true, leg1=true, leg2=true, leg3=true}
-COSTUMES["pirate"] = {frontarm1=true, frontarm2=true, backarm1=true, backarm2=true, frontleg1=true, frontleg2=true, backleg1=true, backleg2=true, leg3=true}
+COSTUMES["pirate"] = {frontarm1=true, frontarm2=true, backarm1=true, backarm2=true, frontleg1=true, backleg1=true, leg2=true, leg3=true}
 COSTUMES["luciengf"] = {frontarm2=true, backarm2=true, leg2=true}
 COSTUMES["corrupted"] = {usesDefaultHair=true, frontarm1=true, frontarm2=true, backarm1=true, backarm2=true, frontleg2=true, backleg2=true}
 COSTUMES["hascape"] = {naija2=true, etc=true, jelly=true, mia=true, priestess=true, sunkenmom=true, corrupted=true, veggie=true}

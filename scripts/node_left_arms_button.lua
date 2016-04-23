@@ -1,3 +1,6 @@
+local v = {}
+v.rightclick = false
+
 function init(me)
 end
 
@@ -7,5 +10,5 @@ end
 
 function activate(me)
 	local manager = getNode("clothesmanager")
-	node_msg(manager, "prev", "arms")
+	node_msg(manager, "next", "arms")
 end

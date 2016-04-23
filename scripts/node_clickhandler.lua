@@ -4,7 +4,7 @@ function init(me)
 end
 
 function update(me)
-    local click = isLeftMouse() or isRightMouse()
+	local click = isLeftMouse() or isRightMouse()
     if click and not v.mbDown then
         v.mbDown = true
     elseif not click and v.mbDown then

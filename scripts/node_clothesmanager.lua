@@ -156,7 +156,7 @@ local function set_helmet(set)
 		bone_setTexture(v.HEAD_BONE, PATH..COSTUMES[v.head].."-helmet")
 	end
 	
-	if COSTUMES[COSTUMES[v.head]].noEars then
+	if (getForm() == FORM_BEAST and COSTUMES[COSTUMES[v.head]].usesDefaultHair) or COSTUMES[COSTUMES[v.head]].noEars then
 		bone_setTexture(v.EARS_BONE, "transparent")
 	else
 		bone_setTexture(v.EARS_BONE, PATH..COSTUMES["ears"][getForm()+1].."-ears")

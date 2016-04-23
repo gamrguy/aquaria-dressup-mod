@@ -10,5 +10,5 @@ end
 
 function activate(me)
 	local manager = getNode("clothesmanager")
-	node_msg(manager, "next", "arms")
+	node_msg(manager, "prev", "arms")
 end

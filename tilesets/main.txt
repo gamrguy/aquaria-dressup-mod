@@ -45,7 +45,7 @@
 
 43 gui/wok-drop
 
-44 naija/naija2-head
+44 heads/naija2-head
 
 45 naija/etc-head
 
@@ -60,32 +60,32 @@
 
 51 naija/mutant-head
 
-52 naija/mia-head
+52 heads/mia-head
 
-53 naija/mithalas_girl1-head
+53 heads/mithalas_girl1-head
 
-54 naija/mithalas_girl2-head
+54 heads/mithalas_girl2-head
 
-55 naija/sunkenmom-head
+55 heads/sunkenmom-head
 
-56 naija/priestess-head
+56 heads/priestess-head
 
-57 naija/li-head
+57 heads/li-head
 
-58 naija/pirate-head
+58 heads/pirate-head
 
-59 naija/luciengf-head
+59 heads/luciengf-head
 
 60 naija/seahorse-head
 
-61 naija/beast-head
+61 heads/beast-head
 
-62 naija/energyform-head
+62 heads/energyform-head
 
-63 naija/veggie-head
+63 heads/veggie-head
 
-64 naija/sunform-head
+64 heads/sunform-head
 
 65 zerosuit-costume
 66 end-costume
-67 naija/corrupted-head
+67 heads/corrupted-head

@@ -1,7 +1,15 @@
 -- so this is the file with all the important stuff shared everywhere
 -- here's the list of costumes in numerical indexing, for switching the heads about
 PATH = "naija/"
-COSTUMES = {"naija2", "etc", "cc", "urchin", "mithalan", "teen", "jelly", "mutant", "seahorse", "end", "energyform", "beast", "veggie", "sunform", "mia", "mithalas_girl1", "mithalas_girl2", "sunkenmom", "priestess", "li", "pirate", "luciengf", "corrupted"}
+
+			--default costumes
+COSTUMES = {"naija2", "etc", "cc", "urchin", "mithalan", "teen", "jelly", "mutant", "seahorse", "end",
+			--forms
+			"energyform", "beast", "veggie", "sunform",
+			--my costumes
+			"mia", "mithalas_girl1", "mithalas_girl2", "sunkenmom", "priestess", "li", "luciengf",
+			--guest stars
+			"pirate", "corrupted", "bird", "snake", "blank", "specbird", "na"}
 
 -- now here's the costume details, indexed by name
 -- these show which costume has which body parts
@@ -34,7 +42,13 @@ COSTUMES["li"] = {frontarm1=true, frontarm2=true, frontarm3=true, backarm1=true,
 COSTUMES["pirate"] = {frontarm1=true, frontarm2=true, backarm1=true, backarm2=true, frontleg1=true, backleg1=true, leg2=true, leg3=true}
 COSTUMES["luciengf"] = {frontarm2=true, backarm2=true, leg2=true}
 COSTUMES["corrupted"] = {usesDefaultHair=true, frontarm1=true, frontarm2=true, backarm1=true, backarm2=true, frontleg2=true, backleg2=true}
-COSTUMES["hascape"] = {naija2=true, etc=true, jelly=true, mia=true, priestess=true, sunkenmom=true, corrupted=true, veggie=true}
+COSTUMES["bird"] = {noEars=true, frontarm1=true, frontarm2=true, backarm1=true, backarm2=true, leg2=true, leg3=true}
+COSTUMES["snake"] = {frontarm1=true, backarm1=true, frontleg1=true, frontleg2=true, frontleg3=true, backleg1=true, backleg2=true, backleg3=true}
+COSTUMES["specbird"] = {arms="teen", frontleg1=true, frontleg2=true, frontleg3=true, backleg1=true, backleg2=true, backleg3=true}
+COSTUMES["blank"] = {legs="end", frontarm1=true, frontarm2=true, frontarm3=true, backarm1=true, backarm2=true, backarm3=true}
+COSTUMES["na"] = {body="mia", arms="mia", legs="mia"}
+
+COSTUMES["hascape"] = {naija2=true, etc=true, jelly=true, mia=true, priestess=true, sunkenmom=true, corrupted=true, veggie=true, snake=true, specbird=true}
 
 --Defines what the default hair is for each form
 COSTUMES["default_hair"] = {"naija2", "energyform", "beast", "veggie", 0, 0, 0, "sunform"}

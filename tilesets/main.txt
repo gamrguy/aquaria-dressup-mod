@@ -86,6 +86,9 @@
 
 64 heads/sunform-head
 
-65 zerosuit-costume
+65 heads/bird-head
 66 end-costume
 67 heads/corrupted-head
+68 heads/specbird-head
+69 heads/snake-head
+70 song/songslot-10

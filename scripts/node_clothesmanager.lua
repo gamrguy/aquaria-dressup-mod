@@ -5,6 +5,7 @@ v.head = 1
 v.body = 1
 v.arms = 1
 v.legs = 1
+v.skin = 1
 
 local function prevClothes(type)
 	local var = v[type]
@@ -144,8 +145,8 @@ local function set_arms(set)
 end
 local function set_helmet(set)
 	switchToSet("head", set)
-	if(COSTUMES[COSTUMES[v.head]].usesDefaultHair) then
-		bone_setTexture(v.HAIR_BONE, PATH..COSTUMES["default_hair"][getForm()+1].."-helmet")
+	if COSTUMES[COSTUMES[v.head]].usesDefaultHair and COSTUMES["default_hair"][COSTUMES["skins"][v.skin]] then
+		bone_setTexture(v.HAIR_BONE, PATH..COSTUMES["default_hair"][COSTUMES["skins"][v.skin]].."-helmet")
 	else
 		bone_setTexture(v.HAIR_BONE, "transparent")
 	end
@@ -156,15 +157,23 @@ local function set_helmet(set)
 		bone_setTexture(v.HEAD_BONE, PATH..COSTUMES[v.head].."-helmet")
 	end
 	
-	if (getForm() == FORM_BEAST and COSTUMES[COSTUMES[v.head]].usesDefaultHair) or COSTUMES[COSTUMES[v.head]].noEars then
+	if (getForm() == FORM_BEAST and COSTUMES[COSTUMES[v.head]].usesDefaultHair) or COSTUMES[COSTUMES[v.head]].noEars
+		or not COSTUMES["ears"][COSTUMES["skins"][v.skin]] then
 		bone_setTexture(v.EARS_BONE, "transparent")
 	else
-		bone_setTexture(v.EARS_BONE, PATH..COSTUMES["ears"][getForm()+1].."-ears")
+		bone_setTexture(v.EARS_BONE, PATH..COSTUMES["ears"][COSTUMES["skins"][v.skin]].."-ears")
 	end
 end
 local function set_body(set)
 	switchToSet("body", set)
 	bone_setTexture(v.BONE_ARMOR, PATH..COSTUMES[v.body].."-overbody")
+	
+	local birdTail = entity_getBoneByName(getNaija(), "BirdTail")
+	if COSTUMES[v.body] == "bird" then
+		bone_setTexture(birdTail, PATH.."bird-tail2")
+	else
+		bone_setTexture(birdTail, "transparent")
+	end
 end
 
 local function updateclothes(set)
@@ -212,6 +221,23 @@ function msg(me, msg, msg2)
 			nextClothes(msg2)
 		elseif msg == "prev" then
 			prevClothes(msg2)
+		end
+	end
+	
+	if msg == "skin" then
+		v.skin = v.skin+1
+		if v.skin > #COSTUMES["skins"] then
+			v.skin = 1
+		end
+		
+		if COSTUMES["forms"][COSTUMES["skins"][v.skin]] then
+			changeForm(COSTUMES["forms"][COSTUMES["skins"][v.skin]])
+		else
+			if COSTUMES["skins"][v.skin] == "naija" then
+				setCostume("")
+			else
+				setCostume(COSTUMES["skins"][v.skin])
+			end
 		end
 	end
 	

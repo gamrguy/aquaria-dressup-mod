@@ -16,7 +16,7 @@
     <Bone idx="22" gfx="debugcross" pidx="11" name="LeftHandGlowPos" fh="0" fv="0" gc="0" cr="0" rq="0" cp="0 0"/>
     <Bone idx="20" gfx="missingimage" pidx="0" name="CapePos" fh="0" fv="0" gc="0" cr="0" rq="0" cp="0 0" rbp="1" pass="1"/>
     <Bone idx="19" gfx="naija/cape" pidx="20" name="Cape" fh="0" fv="0" gc="0" cr="0" rq="0" cp="0 0" rbp="1" sz="0.9 0.9"/>
-    <Bone idx="18" gfx="Naija/bird-tail2" pidx="0" name="BirdTail" fh="0" fv="0" gc="0" cr="0" rq="0" cp="0 0" rbp="1"/>
+    <Bone idx="18" gfx="transparent" pidx="0" name="BirdTail" fh="0" fv="0" gc="1" cr="0" cp="0 0" rbp="1"/>
     <Bone idx="4" gfx="Naija/Naija2-BackArm1" pidx="0" name="RightArm1" fh="0" fv="0" gc="1" cr="0" cp="0 0" rbp="1"/>
 	<Bone idx="25" gfx="transparent" pidx="4" name="RightArm1-armor" fh="0" fv="0" gc="1" cr="0" cp="0 0" rbp="0"/>
     <Bone idx="5" gfx="Naija/End-backArm2" pidx="4" name="" fh="0" fv="0" gc="1" cr="0" cp="0 0"/>
